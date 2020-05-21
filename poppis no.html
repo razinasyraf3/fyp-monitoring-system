@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <title>warning light monitoring system</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+ <script src=" https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+ <script>
+  $(document).ready(function () {
+   $('#example').DataTable({
+    ajax: {
+     url: 'http://gsm.avialite.com/sms-gateway.php?user=60139130735',
+
+     dataSrc: "",
+     method: "GET"
+    },
+    columns: [
+     { data: "LS1" },
+     { data: "LS2" },
+     { data: "MS1" },
+     { data: "phone" },
+     { data: "timestamp" }
+    ]
+   });
+
+  });
+ </script>
+</head>
+
+<body>
+ <div class="container">
+  <h3>WARNING LIGHT MONITORING SYSTEM</h3>
+  <hr>
+  <table id="example" class="display" style="width:100%">
+   <thead>
+    <tr>
+     <th>LS1</th>
+     <th>LS2</th>
+     <th>MS1</th>
+     <th>Tower Id </th>
+     <th>Timestamp</th>
+    </tr>
+   </thead>
+   <tfoot>
+    <tr>
+     <th>LS1</th>
+     <th>LS2</th>
+     <th>MS1</th>
+     <th>Phone</th>
+     <th>Tower id</th>
+    </tr>
+   </tfoot>
+  </table>
+ </div>
+
+</body>
+
+
+
+</html>
